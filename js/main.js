@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
    $(document).ready(function($){
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
-        if (scroll > 300) {
+        if (scroll > 150) {
           $(".nav-container").css("background" , "white");
         }
   
@@ -26,6 +26,22 @@ jQuery(document).ready(function($){
         }
     })
   })
+  var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+
 })
     
 
